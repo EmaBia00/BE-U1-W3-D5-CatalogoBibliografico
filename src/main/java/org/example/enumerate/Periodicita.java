@@ -1,4 +1,7 @@
 package org.example.enumerate;
 
-public class Periodicita {
+public enum Periodicita {
+    SETTIMANALE,
+    MENSILE,
+    SEMESTRALE
 }
