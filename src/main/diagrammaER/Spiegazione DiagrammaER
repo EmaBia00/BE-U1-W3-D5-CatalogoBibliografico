@@ -1,0 +1,22 @@
+Giustificazione delle scelte:
+
+1) Elemento Catalogo (Superclasse):
+  - È una superclasse astratta per rappresentare gli elementi comuni a libri e riviste (es. id, codiceISBN, titolo, ecc.).
+  - Usando l'ereditarietà, libri e riviste ereditano i campi comuni, evitando duplicazione.
+
+2) Libro e Rivista (Sottoclassi):
+  - Entrambe sono entità che specializzano ElementoCatalogo (nella relazione è stato indicato con il termine ISA che ho cercato su internet che significa che Libro e Rivista sono "sottotipi" del "supertipo" ElementoCatalogo).
+  - Libro include campi specifici come autore e genere.
+  - Rivista include un campo per la periodicita.
+
+3) Utente:
+  - Ogni utente è identificato da un id univoco e ha attributi come nome, cognome, dataNascita e numeroTessera(univoco).
+  - Relazione ManyToMany con Prestito per consentire associazioni multiple tra utenti e prestiti..
+
+4) Prestito:
+  - Rappresenta il concetto di un prestito di un elemento del catalogo.
+  - Relazione N:1 con ElementoCatalogo, poiché un prestito è associato a un solo elemento.
+
+5) Utente_Prestito (Tabella di Join):
+  - Creata automaticamente da Hibernate per gestire la relazione ManyToMany.
+  - Contiene le due chiavi esterne: utente_id e prestito_id per collegare le tabelle Prestito e Utente.

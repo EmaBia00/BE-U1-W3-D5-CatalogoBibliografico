@@ -2,7 +2,8 @@ package org.example.entities;
 
 import javax.persistence.*;
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class ElementoCatalogo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
